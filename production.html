@@ -1,0 +1,43 @@
+<html ng-app="a">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>menu</title>
+    <link href="css/ionic.min.css" rel="stylesheet">
+    <script src="js/ionic.bundle.min.js"></script>
+      <script>
+   	angular.module("a",['ionic'])
+   	       .controller("b",function($scope){});
+   </script>   
+   <style>
+   	.content_center{
+   			    max-height: 100%;
+				overflow: auto;
+   	}
+   	
+   </style>
+</head>
+<body ng-controller="b"> 
+	
+	<!--中间内容-->
+	<div class="content has-header content_center" >		
+		<div class="list">
+			<div class="item">
+			<a href="facebook.html" class="button button-assertive" >作品一</a>
+			<a href="zuopinyitupian.html" class="button button-assertive" >作品一图片</a>
+		</div>
+		<div class="item">
+			<a href="yigou.html" class="button button-energized" >作品二图片</a>
+		</div>
+		<div class="item">
+			<a href="Mobile.html#centent" class="button button-assertive" >作品三</a>
+			<a href="MoblieImg.html" class="button button-assertive" >作品三图片</a>
+		</div>
+		<div class="item">
+			<a href="bootstrap_img.html" class="button button-energized" >作品四图片</a>
+		</div>
+		
+		
+	</div>
+    </body>
+</html>

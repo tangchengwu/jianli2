@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>京东移动端商品页</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"></meta>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+			
+			#container {
+				width:100% ;
+				min-width:300px;
+				max-width: 650px;
+				margin:0 auto;
+				position: relative;
+			}
+			body{
+				background-color:#ccc ;
+			}
+			nav,section{
+				background-color:white ;
+			}
+			header {
+				position:fixed ;
+				height: 24px;
+				z-index: 1000;
+				width:100% ;
+				left: 0;
+				top: 0;
+			}
+			header *{
+				border:1px solid red ;
+			}
+			.jd_header_box {
+				width: 100%;
+				max-width: 640px;
+				/*设计图的原因  不然它放大*/
+				min-width: 300px;
+				/*为了更好的布局*/
+				margin: 0 auto;
+				background: rgba(201, 21, 35, 0);
+				height: 40px;
+				position: relative;
+			}
+			
+			.top_logo {
+				border:1px solid red ;
+				background:url(images/sprites.png)  no-repeat 0  -109px;
+				width:59px;
+				height: 24px;
+				background-size: 200px 200px;
+				z-index: 1000;
+				position:absolute ;
+				top:4px;
+				left:10px
+			}
+			
+			.top1_search {
+				width: 100%;
+				padding-left: 75px;
+				padding-right: 50px;
+				height: 40px;
+				position: relative;
+				/*position:relative ;
+				width:100%;
+				padding-left:80px;
+				padding-top:6px ;*/
+			}
+			
+			.top1_search input[type=search] {
+				width: 100%;
+				height: 30px;
+				border-radius: 15px;
+				margin-top: 5px;
+				padding-left: 30px;
+				position: relative;
+			}
+			
+			.top_login {
+				width: 50px;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				color: #fff;
+				position: absolute;
+				right: 0;
+				top: 0;
+				font-size: 15px;
+			
+				
+			}
+			
+			#pic {
+				height: auto;
+				position: relative;
+				top: 0;
+				left: 0;
+				display: block;
+				
+			}
+			
+			
+			img {
+				max-width: 100%;
+			}
+			#nav {
+				height: auto;
+				display: flex;
+				flex-wrap: wrap;
+				
+				margin-top:10px ;
+				margin-bottom:10px;
+				
+			}
+			
+			#nav dl {
+				width: 25%;
+				height: auto;
+				
+				padding-left:5% ;
+			}
+			#nav dt{
+				width:40px ;
+				
+				height: auto;
+			}
+			#nav dl dd{
+				width:100% ;
+				font-size:12px ;
+			}
+			main {
+				width: 100%;
+				height: 400px;
+				clear: both;
+			}
+			
+			.m1_top {
+				clear: both;
+				width: 100%;
+				height: auto;
+				
+			/*	border: 1px solid red;*/
+				
+			}
+			
+			.m1_bottom {
+				width: 100%;
+				height: auto;
+				display: flex;
+			}
+			
+			.m1_bottom dl {
+				flex: 1;
+				
+			}
+			.m1_bottom dl dt{
+				padding:10% 10% 0 10% ;
+			}
+			.m1_bottom dl dd{
+				text-align: center;
+				
+			}
+			.m1_bottom dl dd:nth-child(2){
+				color: red;
+				font-size:13px ;
+			}
+			.m1_bottom dl dd:nth-child(3){
+				color: #333;
+				font-size:15px ;
+				text-decoration: line-through;
+			}
+			.m1_bottom dl:nth-of-type(2){
+				
+				border-left:1px solid #ccc ;
+				border-right:1px solid #ccc ;
+			}
+			.m2_top {
+				width: 100%;
+				height: auto;
+				font-size:14px;
+				font-family: "微软雅黑";
+				border: 1px solid yellow;
+				padding:5px;
+			}
+			
+			.m2_bottom {
+				width: 100%;
+				height: auto;
+				border: 1px solid hotpink;
+				display: flex;
+			}
+			
+			.m2_bottom .m2_left {
+				flex: 1;
+				border: 1px solid hotpink;
+			}
+			
+			.m2_bottom .m2_right {
+				flex: 1;
+				border: 1px solid hotpink;
+			}
+			
+			.m2_right_top,
+			.m2_right_bottom {
+				border: 1px solid black;
+				height: 50%;
+				width: 100%;
+			}
+			.searchMarker{
+				background:url("images/sprites.png") no-repeat -60px -108px;
+			   background-size:200px 200px ;
+			    width:20px;
+			    height: 24px;
+			    position:absolute ;
+			    left:85px;
+			top:8px;
+			z-index: 1001;
+			}
+			a{
+				text-decoration: none;
+				color:black;
+			}
+			.clock{
+				display: inline-block;
+				width:16px;
+				height: 20px;
+				margin:0 10px 0 10px;
+				
+			}
+			.secondKill{
+				margin-top: 1px;
+				color: red;
+				font-size:15px ;
+				margin-right:10px ;
+				
+			}
+			 ol {
+			 	clear: both;
+			 	float:none ;
+			 }
+			 ol li{
+				list-style: none;
+				float: left;
+				
+			}
+			ol li:last-child{
+				float:right;
+				font-size: 12px;
+			}
+			.showTime {
+				
+			}
+			.showTime span{
+				display: block;
+				width:12px;
+				height:14px;
+				line-height:14px ;
+				background-color:black ;
+				color: white;
+				position: static;
+				text-align: center;
+				float:left;
+				margin-left:3px;
+			} 
+			
+			.showTime span:nth-child(3n){
+				background-color:white;
+				color: black;
+				width:8px;
+			}
+			.redLine{
+				border: 1px solid red;
+				margin:5px;
+				margin-left:8px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="container">
+			<header>
+
+				<div class="jd_header_box">
+					<div class="top_logo"></div>
+					<form class="top1_search" action="#">
+						<span class="searchMarker"></span>
+						<input type="search" placeholder="Search"/>
+					</form>
+					<div class="top_login">登录</div>
+
+				</div>
+				
+			</header>
+			
+			<section id="pic">
+					<img src="images/l1.jpg" />
+
+				</section>
+
+				<nav id="nav">
+					<dl>
+						<dt>
+						<img src="images/nav0.png" />
+					</dt>
+						<dd><a href="">分类导航</a></dd>
+					</dl>
+					<dl>
+						<dt>
+						<img src="images/nav1.png" />
+					</dt>
+						<dd><a href="">分类导航</a></dd>
+					</dl>
+					<dl>
+						<dt>
+						<img src="images/nav2.png" />
+					</dt>
+						<dd><a href="">分类导航</a></dd>
+					</dl>
+					<dl>
+						<dt>
+						<img src="images/nav3.png" />
+					</dt>
+						<dd><a href="">分类导航</a></dd>
+					</dl>
+					<dl>
+						<dt>
+						<img src="images/nav4.png" />
+					</dt>
+						<dd><a href="">分类导航</a></dd>
+					</dl>
+					<dl>
+						<dt>
+						<img src="images/nav5.png" />
+					</dt>
+						<dd><a href="">分类导航</a></dd>
+					</dl>
+					<dl>
+						<dt>
+						<img src="images/nav6.png" />
+					</dt>
+						<dd><a href="">分类导航</a></dd>
+					</dl><dl>
+						<dt>
+						<img src="images/nav7.png" />
+					</dt>
+						<dd><a href="">分类导航</a></dd>
+					</dl>
+				</nav>
+			<main>
+				<section>
+					<div class="m1_top">
+						<ol>
+<li class="clock"> <img src="images/seckill-icon.png"></li>
+<li class="secondKill">掌上秒杀</li>
+<li class="showTime">
+	<span>0</span>
+	<span>0</span>
+	
+	<span>:</span>
+	<span>0</span>
+	<span>0</span>
+	
+	<span>:</span>
+	<span>0</span>
+	<span>0</span>
+</li>
+<li><a href="#">更多<<</a></li>
+</ol>
+					</div>
+					
+					<div class="m1_bottom">
+						<dl>
+							<dt>
+							<img src="images/detail01.jpg"	 />
+							</dt>
+							<dd>&yen;10</dd>
+							<dd>&yen;100</dd>
+						</dl>
+						<dl>
+							<dt>
+							<img src="images/detail02.jpg"	 />
+							</dt>
+							<dd>&yen;10</dd>
+							<dd>&yen;100</dd>
+						</dl>
+						<dl>
+							<dt>
+							<img src="images/detail01.jpg"	 />
+							</dt>
+							<dd>&yen;10</dd>
+							<dd>&yen;100</dd>
+						</dl>
+					</div>
+				</section>
+				<br />
+				
+				<section>
+					<div class="m2_top">
+						<span class="redLine"></span>京东超市
+					</div>
+					<div class="m2_bottom">
+						<div class="m2_left">
+							<img src="images/cp1.jpg" />							
+						</div>
+						<div class="m2_right">
+							<section class="m2_right_top">
+								<img src="images/cp2.jpg" />							</section>
+							<section class="m2_right_bottom">
+								<img src="images/cp3.jpg" />
+							</section>
+						</div>
+					</div>
+				</section>
+				
+				<br />
+				<section>
+					<p class="m2_top"></p>
+					<div class="m2_bottom">
+
+						<div class="m2_right">
+							<section class="m2_right_top"></section>
+							<section class="m2_right_bottom"></section>
+						</div>
+						<div class="m2_left"></div>
+					</div>
+				</section>
+				<br />
+				<section>
+					<p class="m2_top"></p>
+					<div class="m2_bottom">
+						<div class="m2_left"></div>
+						<div class="m2_right">
+							<section class="m2_right_top"></section>
+							<section class="m2_right_bottom"></section>
+						</div>
+					</div>
+				</section>
+
+			</main>
+		</div>
+	</body>
+
+</html>

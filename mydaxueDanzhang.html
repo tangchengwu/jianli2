@@ -1,0 +1,143 @@
+<html ng-app="a">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>mydaxueDanzhang</title>
+    <link href="css/ionic.min.css" rel="stylesheet">
+    <script src="js/ionic.bundle.min.js"></script>
+      <script>
+   	angular.module("a",['ionic'])
+   	       .controller("b",function($scope){});
+   </script>   
+   <style>
+   	p{
+   		line-height: 2.5rem;
+   		
+   	}
+   	.content_center{
+   			    max-height: 100%;
+				overflow: auto;
+   	}
+   	section{
+   		line-height: 1.6rem;
+   	}
+   	ul li{
+   		float: left;
+   		margin: 0.1rem 1rem;
+   	}
+   	ul li:hover{
+   		cursor: pointer;
+   		color: red;
+   		
+   	}
+   	.blue{
+				background: royalblue;
+				border-radius: 5px;
+		}
+   	
+   	
+   </style>
+</head>
+<body ng-controller="b"> 
+	<!--中间内容-->
+<div class="content has-header content_center" >	
+<ion-list  >
+    <ion-item>
+    <center><h2><b>我的大学部分毕业创作欣赏</b></h2></center>
+   </ion-item>
+    <ion-item>
+    <center><b>作品题目：</b><span id="span">s</span></center>
+   </ion-item>
+     <ion-item >
+   	   <!-- 图片链接 引入图片-->
+   	    <img src="" class="full-image" id="itemImg"/>
+   </ion-item>
+    <ion-item>
+  <ul id="ul">
+  	<li>万柿如意</li>
+  	<li>金灿灿</li>
+  	<li>读书男子</li>
+  	<li>儿时的回忆</li>
+  	<li>我的同学</li>
+  	<li>甜蜜</li>
+  	<li>海滩</li>
+  	<li>山光水色</li>
+  	<li>静物</li>
+  	<li>凤还巢</li>
+  </ul>
+   </ion-item >
+ 
+  <ion-item>
+   <a href="basicInformation.html" class="icon ion-ios-undo">返回上一级</a>&nbsp;&nbsp;
+   <a href="mydaxue.html" class="icon ion-android-apps">列表显示</a>
+   <a href="mydaxuelunbo.html" class="icon ion-android-apps">轮播显示</a>
+   </ion-item>
+   <ion-item>
+   </ion-item>
+
+    
+</ion-list>
+</div>
+<script>
+//	function $(id){
+//		return document.getElementById(id);
+//	}
+//	var itemImg=$("itemImg");
+//	var ul=$("ul");
+//	var li=document.getElementsByTagName("li");
+//	var itemImgValue=["img/bic (1).JPG","img/bic (2).JPG","img/bic (3).JPG","img/bic (4).JPG","img/bic (5).JPG","img/bic (6).JPG","img/bic (7).JPG","img/bic (8).JPG","img/bic (9).JPG","img/bic (10).JPG"];
+//	
+//			var num=0;
+//			var li2=num;
+//		itemImg.innerHTML=itemImgValue[0];
+////			第二种方法实现背景颜色改变li2=li[num];
+//			li2=li[num];		
+//			for(var i=0;i<li.length;i++){
+//				li[i].index=i;
+//				li[i].onclick=function(){
+//					itemImg.innerHTML=itemImgValueimg[this.index];
+//             li2.className="";
+//             li2=this;
+//             this.className="blue";	
+//	       } 
+//			}
+function $(id){
+				return document.getElementById(id);
+			}
+            var spanValue=["《万柿如意》","《金灿灿》","《读书男子》","《儿时的回忆》","《我的同学》","《甜蜜》","《海滩》","《山光水色》","《静物》","《凤还巢》"];
+			var span=$("span");
+			var ul=$("ul");
+			var li=ul.getElementsByTagName("li");
+//			把图片src地址有数组贮存起来
+			var itemImgValue=["img/bic (1).JPG","img/bic (2).JPG","img/bic (3).JPG","img/bic (4).JPG","img/bic (5).JPG","img/bic (6).JPG","img/bic (7).JPG","img/bic (8).JPG","img/bic (9).JPG","img/bic (10).JPG"];
+			var num=0;
+			var li2=num;
+//		初始化效果
+		$("itemImg").src=itemImgValue[0];
+		li[0].className="blue";
+		span.innerHTML=spanValue[0];
+//			第二种方法实现背景颜色改变li2=li[num];
+			li2=li[num];
+//			遍历单击当前的li 触发事件
+			for(var i=0;i<li.length;i++){
+				li[i].index=i;
+			
+				li[i].onclick=function(){
+				$("itemImg").src=itemImgValue[this.index];
+				span.innerHTML=spanValue[this.index];
+               li2.className="";
+               li2=this;
+               this.className="blue";	
+	       }
+				
+			}
+		
+			
+			
+</script>
+    </body>
+</html>
+
+
+
+   

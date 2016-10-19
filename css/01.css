@@ -1,0 +1,47 @@
+*{padding: 0;margin: 0;box-sizing: border-box}
+
+body{width: 80%;height: auto;margin: 0 auto;}
+
+header{width:100%;height:13vh;background-color:#3A5795;/* border: 1px solid red;*/}
+
+.headerleft{width:50%;height:13vh;float:left;font-size:3.5rem;color:white;font-weight:bold;
+ text-align:center;line-height:18vh; border: /*1px solid red;*/}
+
+.headerright{width:50%;height:13vh;float:left; /*border: 1px solid red;*/}
+
+.headerright dl{float:left;}
+
+.headerright dl dt{height:3vh;margin-top:0.8rem;font-size:0.8rem;color:white;
+margin-left:6px; border:/* 1px solid red;*/}
+
+.headerright dl dd{height:3vh;margin-top:0.2rem;margin-left:6px; /* border: 1px solid red;*/}
+
+
+
+main{width:50%;height:66.1vh;float:left;text-align:center;background:#D7DCEA;
+/* border: 1px solid red;*/}
+
+main img{position:relative;top:-3vh;width:100%;}
+
+aside{width:50%;height:66.1vh;;float:left;line-height:4vh;padding-top:2.7rem;background:#D7DCEA;
+/* border: 1px solid red;*/}
+
+aside input[type=text]{width:12vw;height:3.5vh; border-radius:0.4rem;}
+
+aside div input[type=text]{width:25vw;height:3.5vh;margin-top:1rem; border-radius:0.4rem;}
+
+aside div input[type=password]{width:25vw;height:3.5vh;margin-top:1rem; border-radius:0.4rem;}
+
+aside input[type=button]{width:16vw;height:3.5vh;margin-top:0.5rem; border-radius:0.3rem;
+background-color:green;color:white;}
+
+aside hr{margin-top:1rem;}
+
+
+footer{width:80%;height:10vh;margin:0 10%; float:left;/* border: 1px solid red;*/}
+
+
+
+
+
+

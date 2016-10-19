@@ -1,0 +1,64 @@
+<html ng-app="a">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>footer</title>
+    <link href="css/ionic.min.css" rel="stylesheet">
+    <script src="js/ionic.bundle.min.js"></script>
+      <script>
+   	angular.module("a",['ionic'])
+   	       .controller("b",function($scope){});
+   </script>
+   <style>
+   	.blue{
+   		background: blue;
+   	}
+   </style>
+</head>
+<body ng-controller="b"> 
+	 <!--脚步内容-->
+	<div  class="tabs tabs-icon-top tabs-positive" >
+	
+	<a class="tab-item" href="basicInformation.html"  target="basicInformation" scrolling="no">
+        <i class="icon ion-information"></i>
+                      基本信息
+    </a>
+    <a class="tab-item" href="skill.html"  target="basicInformation" scrolling="no" >
+        <i class="icon ion-compose"></i>
+                       个人技能        
+    </a>
+    <a class="tab-item" href="production.html"  target="basicInformation" scrolling="no" >
+        <i class="icon ion-ios-folder-outline"></i>
+                       我的作品
+    </a>
+    <a class="tab-item" href="summarize.html"  target="basicInformation" scrolling="no" >
+        <i class="icon ion-ios-person"></i>
+                      自我总结
+    </a>
+	<script>
+//	                     获取a标签元素
+			var a=document.getElementsByTagName("a");
+//			未点击之前
+			var num=0;
+//			点击之后前一个的值
+			var a2=num;
+//			背景初始化
+			a[0].style.backgroundColor="blue";
+			for(var i=0;i<a.length;i++){				
+//				遍历点击当前a对象
+				a[i].onclick=function(){
+//			   a2.className="";
+//             点击发生前一个的样式复原
+               a2.style.backgroundColor="";
+               a2=this;
+//             this.className="blue";
+//             点击的a
+               this.style.backgroundColor="blue";	
+	       } 
+			}
+		    a2=a[num];
+		</script>
+
+	 </div>	
+    </body>
+</html>

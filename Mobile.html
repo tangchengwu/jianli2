@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>手机京东</title>
+		<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+			
+		}
+		body{
+			background: #ccc;
+		}
+		/*外面大容器*/
+		#centent{
+			position: relative;
+			width: 100%;
+			margin: 0 auto;
+			min-width: 300px;
+			max-width: 680px;
+			
+			
+		}
+		/*头部固定部分*/
+		header{
+			
+			position:fixed;
+			z-index: 100;
+			width: 100%;
+			height: auto;
+			/*border: 1px solid red;*/
+		}
+		.header-div{
+			position: absolute;
+			width: 100%;
+			margin: 0 auto;
+			max-width: 680px;
+			min-width: 300px;
+			height: auto;
+			top: 0;
+			left: 0;
+			/*border:1px solid red;*/
+				
+		}
+		.jdtitle{
+			position: absolute;
+			width: 59px;
+			height: 30px;
+			background: url("img/sprites.png")no-repeat;
+			background-position: 0px -109px;
+			background-size:200px 200px;
+			margin: 5px 0px 10px 10px;
+			/*border:1px solid red;*/
+		}
+		.search{
+			padding-left: 72px;
+			padding-right: 45px;
+			margin-top: 3px;
+			width:100%;
+			height: 35px;
+			/*border: 1px solid red;*/
+		}
+		.search input{
+			width: 100%;
+			height: 27px;
+			text-indent: 26px;
+			
+			border-radius:13px;
+		}
+		.search-span{
+			position: absolute;
+			top: 7px;
+			left:79px;
+			background: url("img/sprites.png")no-repeat;
+			background-position:-60px -110px;
+			background-size:200px 200px;
+			width: 20px;
+			height: 20px;
+			/*border: 1px solid red;*/
+		}
+		.submit{
+			position: absolute;
+			right: 0;
+			top: 0;
+			line-height:33px;
+			width:40px;
+			height: 35px;
+			color: white;
+			/*border: 1px solid red;*/
+		}
+		
+		/*中间部分*/
+		main{
+			width: 100%;
+			height: auto;
+			background: burlywood;
+		}
+		/*顶部图片*/
+		.main-img{
+			max-width: 100%;
+		}
+		/*分类查询*/
+		aside{
+		    display: flex;
+		    flex-wrap: wrap;
+		    
+		    width: 100%;
+		    height: auto;
+		    background: white;
+		    
+		
+		}
+		.class-div{
+		      width: 25%;
+		    height: 100px;
+		   /* border: 1px solid black;*/
+		   
+		
+		}
+		
+		.class-dl{
+		padding-top: 10px;
+		    text-align: center;
+		    width: 100%;
+		    height: 100px;
+		    /*border: 1px solid black;*/
+		}
+	
+		.class-dl dt img{
+		    width: 70px;
+		    height: 70px;
+		}
+		/*掌上秒杀大容器*/
+		.miaosha-div{
+		    margin-top: 8px;
+		    margin-bottom: 5px;
+		    width: 100%;
+		    height: auto;
+		    background:white;
+		    /*border: 1px solid red;*/
+		}
+		.dingbu{
+		   width: 100%;
+		   height: 40px;
+		  /* border: 1px solid red;*/
+		   
+		}
+		
+		.dingbu-ul li{
+		   list-style: none;
+		   float: left;
+		
+		}
+		.shizhong-img{
+		   margin-left: 2px;
+		   margin-top: 5px;
+		    width: 30px;
+		    height: 30px;
+		   /* border: 1px solid red;*/
+		    
+		}
+		
+		.zhangshangmiaosha{
+			position: absolute;
+		    padding-left: 35px;
+		    line-height: 45px;
+		    color: red;
+		    width: 100%;
+		    height: 40px;
+		    /*border: 1px solid black;
+		*/
+		}
+		.shizhongshuzi{
+			position: absolute;
+			padding-left: 100px;
+			
+			width: 100%;
+			height: 40px;
+			/*border: 1px solid black;*/
+			
+		}
+		.shuzi{
+			display: inline-block;
+			margin-top: 7px;
+			text-align: center;
+			line-height: 25px;
+			background: black;
+			color: white;
+			width: 18px;
+			height: 25px;
+			/*border: 1px solid red;*/
+		}
+		.maohao{
+			display: inline-block;
+			
+			
+			
+			width: 5px;
+			height: 25px;
+			
+			color: black;
+			/*border: 1px solid red;*/
+			
+		}
+		.gengduo{
+			position: absolute;
+			right: 0;
+			padding: 10px 0 0 10px;
+			width: 50px;
+			height: 40px;
+			font-size: 14px;
+			font-weight:bold;
+			/*border: 1px solid red;*/
+			
+		}
+		/*图片部分大容器*/
+		.tupianbufen{
+			display: flex;
+			width: 100%;
+			height: auto;
+			/*border: 1px solid red;*/
+		}
+		.tupian{
+			flex: 1;
+			text-align: center;
+			/*border: 1px solid red;*/
+		}
+		.tupian img{
+			max-width: 100%;
+			padding: 9px;
+			/*border: 1px solid red;*/
+		}
+		/*手机京东大容器*/
+		.shoujiJDda{
+			margin-bottom: 8px;
+			width: 100%;
+			height: auto;
+			background: white;
+		}
+		/*手机京东顶部容器*/
+		.shoujidingbu{
+			width: 100%;
+			height: 40px;
+			border: 1px solid blueviolet;
+			border-top: none;
+			border-left: none;
+			border-right: none;
+		}
+		 .xian{
+		 	display: inline-block;
+		 	margin: 5px 0 0 5px;
+		 	width: 3px;
+		 	height: 25px;
+		 	background: red;
+		 } 
+		 .font-shoujiJD{
+		 	position: absolute;
+		 	margin: 8px 0 0 5px;
+		 	display: inline-block;
+		 	width: 80px;
+		 	height: 30px;
+		 	font-weight: bold;
+		 	
+		 	/*border: 1px solid red;*/	
+	    }
+         /*图片部分容器*/
+         .tupianzhong{
+         	display: flex;
+         	width: 100%;
+         	height: auto;
+         	/*border: 1px solid red;*/
+        }
+		.tupianda{
+		 	flex: 1;
+		 	border: 1px solid blueviolet;
+			border-top: none;
+			border-bottom: none;
+			border-right: none;
+		}
+		/*手机专享图片*/
+		.tupiandayi{
+			max-width: 100%;
+		}
+		/*右边第二个图片容器*/
+		.tupiandaer{
+			display:flex;
+			flex-direction: column;
+		 	flex: 1;
+		 	border: 1px solid red;
+		 	border: 1px solid blueviolet;
+			border-top: none;
+			border-bottom: none;
+			border-right: none;
+		}
+		
+		
+		
+		.tupianyouyi{
+			flex: 1;
+			border: 1px solid red;
+			border: 1px solid blueviolet;
+			border-bottom: none;
+			border-left: none;
+			border-right: none;
+			
+		}
+		.tupianyouyi-shang{
+			max-width: 100%;
+		}
+		       
+		   
+		   
+		   
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		
+		/*脚部*/
+		footer{
+			width: 100%;
+			height: auto;
+			background:yellow;
+		}
+		
+			
+		</style>
+	</head>
+	<body>
+		<!--最大父级容器-->
+		<div id="centent">
+		    <header>
+		    	<!--头部固定的大容器-->
+		    	<div class="header-div">
+		    		<!--京东图标-->
+		    		<div class="jdtitle"></div>
+		    		<!--搜素框-->
+		    		<form class="search">
+		    			<span class="search-span"></span>
+		    			<input type="search" placeholder="提示站位">
+		    		</form>
+		    		<div class="submit">登录</div>
+		    	</div>
+		    </header>
+		    <!--顶部图片-->
+		    <main>
+		    	<img class="main-img" src="img/l1.jpg"/>
+		    </main>
+		   <!-- 分类查询-->
+		   <aside>
+		        <div class="class-div">
+		        <dl class="class-dl">
+		           <dt><img src="img/nav1.png"</dt>
+		           <dd>分类查询</dd>
+		        </dl>
+		        </div>
+		        <div class="class-div">
+		        <dl class="class-dl">
+		           <dt><img src="img/nav2.png"</dt>
+		           <dd>分类查询</dd>
+		        </dl>
+		        </div>
+		        <div class="class-div">
+		        <dl class="class-dl">
+		           <dt><img src="img/nav3.png"</dt>
+		           <dd>分类查询</dd>
+		        </dl>
+		        </div>
+		        <div class="class-div">
+		        <dl class="class-dl">
+		           <dt><img src="img/nav4.png"</dt>
+		           <dd>分类查询</dd>
+		        </dl>
+		        </div>
+		        <div class="class-div">
+		        <dl class="class-dl">
+		           <dt><img src="img/nav4.png"</dt>
+		           <dd>分类查询</dd>
+		        </dl>
+		        </div>
+		        <div class="class-div">
+		        <dl class="class-dl">
+		           <dt><img src="img/nav5.png"</dt>
+		           <dd>分类查询</dd>
+		        </dl>
+		        </div>
+		        <div class="class-div">
+		        <dl class="class-dl">
+		           <dt><img src="img/nav6.png"</dt>
+		           <dd>分类查询</dd>
+		        </dl>
+		        </div>
+		        <div class="class-div">
+		        <dl class="class-dl">
+		           <dt><img src="img/nav7.png"</dt>
+		           <dd>分类查询</dd>
+		        </dl>
+		        </div>
+		   </aside>
+		   
+		   <div class="miaosha-div">
+		         <div class="dingbu">
+		              <ul class="dingbu-ul">
+		                 <li><img class="shizhong-img" src="img/seckill-icon.png"/></li>
+		                 <li class="zhangshangmiaosha">
+		                 	掌上秒杀
+		                 </li>
+		                 <li class="shizhongshuzi">
+		                 	<font class="shuzi">0</font>
+		                 	<font class="shuzi">0</font>
+		                 	<font class="maohao">:</font>
+		                 	<font class="shuzi">0</font>
+		                 	<font class="shuzi">0</font>
+		                 	<font class="maohao">:</font>
+		                 	<font class="shuzi">0</font>
+		                 	<font class="shuzi">0</font>
+		                 </li>
+		                 <li class="gengduo">更多></li>
+		              </ul>
+		         </div>
+		        <!-- 图片部分大容器-->
+		         <div class="tupianbufen">
+		         	<div class="tupian">
+		         		<dl>
+		         			<dt><img class="tupian-img" src="img/detail01.jpg"></dt>
+		         			<dd>
+		         				<font style="color: red;">￥10.00</font>
+		         				<br/>
+		         				<font><s>￥100.00</s></font>
+		         			</dd>
+		         		</dl>
+		         		
+		         		
+		         	</div>
+		         	
+		         	<div class="tupian">
+		         		<dl>
+		         			<dt><img class="tupian-img" src="img/detail02.jpg"></dt>
+		         			<dd>
+		         				<font style="color: red;">￥10.00</font>
+		         				<br/>
+		         				<font><s>￥100.00</s></font>
+		         			</dd>
+		         		</dl>
+		         		
+		         	</div>
+		         	<div class="tupian">
+		         		<dl>
+		         			<dt><img class="tupian-img" src="img/detail01.jpg"></dt>
+		         			<dd>
+		         				<font style="color: red;">￥10.00</font>
+		         				<br/>
+		         				<font><s>￥100.00</s></font>
+		         			</dd>
+		         		</dl>
+		         		
+		         	</div>
+		         	
+		         </div>
+		   </div>
+		   <!--手机京东大容器-->
+		   <div class="shoujiJDda">
+		   	   <!--手机京东顶部容器-->
+		   	   <div class="shoujidingbu">
+		   	   	 <div class="xian"></div>
+		   	   	 <font class="font-shoujiJD">
+		   	   	 	手机京东
+		   	   	 </font>
+		   	  </div>
+		   	  <!--图片部分容器-->
+		   	  <div class="tupianzhong">
+		   	  	 <div class="tupianda">
+		   	  	 	<img class="tupiandayi" src="img/cp1.jpg"/>
+		   	  	 </div>
+		   	  	 <!--右边第二个图片-->
+		   	  	 <div class="tupiandaer">
+		   	  	 	 <div class="tupianyouyi">
+		   	  	 	 	<img class="tupianyouyi-shang" src="img/cp2.jpg"/>
+		   	  	 	 </div>
+		   	  	 	 <div class="tupianyouyi">
+		   	  	 	 	<img class="tupianyouyi-shang"  src="img/cp3.jpg"/>
+		   	  	 	 </div>
+		   	  	 	
+		   	  	 </div>
+		   	  	
+		   	  </div>
+		   	</div>
+		   	
+		   	<!--手机京东大容器二-->
+		   <div class="shoujiJDda">
+		   	   <!--手机京东顶部容器-->
+		   	   <div class="shoujidingbu">
+		   	   	 <div class="xian"></div>
+		   	   	 <font class="font-shoujiJD">
+		   	   	 	手机京东
+		   	   	 </font>
+		   	  </div>
+		   	  <!--图片部分容器-->
+		   	  <div class="tupianzhong">
+		   	  	 
+		   	  	 <!--左边第二个图片-->
+		   	  	 <div class="tupiandaer">
+		   	  	 	 <div class="tupianyouyi">
+		   	  	 	 	<img class="tupianyouyi-shang" src="img/cp5.jpg"/>
+		   	  	 	 </div>
+		   	  	 	 <div class="tupianyouyi">
+		   	  	 	 	<img class="tupianyouyi-shang"  src="img/cp6.jpg"/>
+		   	  	 	 </div>
+		   	  	 	
+		   	  	 </div>
+		   	  	 
+		   	  	 <div class="tupianda">
+		   	  	 	<img class="tupiandayi" src="img/cp4.jpg"/>
+		   	  	 </div>
+		   	  	
+		   	  </div>
+		   	</div>
+		   	
+		   	
+
+		    
+		    <footer>
+		    	  <!--手机京东大容器-->
+		   <div class="shoujiJDda">
+		   	   <!--手机京东顶部容器-->
+		   	   <div class="shoujidingbu">
+		   	   	 <div class="xian"></div>
+		   	   	 <font class="font-shoujiJD">
+		   	   	 	手机京东
+		   	   	 </font>
+		   	  </div>
+		   	  <!--图片部分容器-->
+		   	  <div class="tupianzhong">
+		   	  	 <div class="tupianda">
+		   	  	 	<img class="tupiandayi" src="img/cp1.jpg"/>
+		   	  	 </div>
+		   	  	 <!--右边第二个图片-->
+		   	  	 <div class="tupiandaer">
+		   	  	 	 <div class="tupianyouyi">
+		   	  	 	 	<img class="tupianyouyi-shang" src="img/cp2.jpg"/>
+		   	  	 	 </div>
+		   	  	 	 <div class="tupianyouyi">
+		   	  	 	 	<img class="tupianyouyi-shang"  src="img/cp3.jpg"/>
+		   	  	 	 </div>
+		   	  	 	
+		   	  	 </div>
+		   	  	
+		   	  </div>
+		   </div>		   	
+		    </footer><br/><br/>
+		    <a href="production.html">返回上一级</a>
+		</div>
+	</body>
+</html>

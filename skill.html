@@ -1,0 +1,102 @@
+<html ng-app="a">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>shoppingCar</title>
+    <link href="css/ionic.min.css" rel="stylesheet">
+    <script src="js/ionic.bundle.min.js"></script>
+      <script>
+   	angular.module("a",['ionic'])
+   	       .controller("b",function($scope){});
+   </script>   
+   <style>
+   	.painga{
+   		margin: 0;
+   		padding: 0;
+   	}
+   	.content_center{
+   			    max-height: 100%;
+				overflow: auto;
+   	}
+
+   	
+   </style>
+</head>
+<body ng-controller="b"> 
+	
+	<!--中间内容-->
+	<div class="content has-header content_center" id="div1">		
+		<div class="list" id="div2">
+			<div class="item">
+		           1.熟练计算机网络基本知识
+			</div>
+			<div class="item">
+		           2.h5前端工程师的div+css3.0，能操作javascript，熟悉AngularJS框架、
+		           bootstrap框架、jQuery等框架。了解saa、gulp工具的使用。         
+			</div>
+			<div class="item">
+		           3.熟悉MySQL数据库操作，了解Oracle数据库操作；
+			</div>
+			<div class="item">
+		           1.熟练计算机网络基本知识
+			</div>
+			<div class="item">
+		           2.h5前端工程师的div+css3.0，能操作javascript，熟悉AngularJS框架、
+		           bootstrap框架、jQuery等框架。了解saa、gulp工具的使用。         
+			</div>
+			<div class="item">
+		           3.熟悉MySQL数据库操作，了解Oracle数据库操作；
+			</div>
+			<div class="item">
+		           1.熟练计算机网络基本知识
+			</div>
+			<div class="item">
+		           2.h5前端工程师的div+css3.0，能操作javascript，熟悉AngularJS框架、
+		           bootstrap框架、jQuery等框架。了解saa、gulp工具的使用。         
+			</div>
+			<div class="item">
+		           3.熟悉MySQL数据库操作，了解Oracle数据库操作；
+			</div>
+			<div class="item">
+		           1.熟练计算机网络基本知识
+			</div>
+			<div class="item">
+		           2.h5前端工程师的div+css3.0，能操作javascript，熟悉AngularJS框架、
+		           bootstrap框架、jQuery等框架。了解saa、gulp工具的使用。         
+			</div>
+			<div class="item">
+		           3.熟悉MySQL数据库操作，了解Oracle数据库操作；
+			</div>
+			<div class="item">   
+			</div>	
+	</div>
+	<div id="div3"></div>
+	<div>
+		
+		<script>
+ 	function $(id){
+ 		return document.getElementById(id);
+ 	}
+ 	var div1=$("div1");
+ 	var div2=$("div2");
+ 	var div3=$("div3");
+ 	div3.innerHTML=div2.innerHTML;
+ 	 function a(){
+ 	 	if(div1.scrollTop<=div3.offsetHeight){
+ 	 	div1.scrollTop++;
+ 	 	}else{
+ 	 		div1.scrollTop=0;
+ 	 	}
+ 	 }
+ 	  var t=setInterval("a()", 100);
+ 	 div1.onmouseover=function(){
+ 	 	clearInterval(t);
+ 	 }
+ 	 div1.onmouseout=function(){
+ 	 	t=setInterval("a()", 100);
+ 	 }
+</script>
+
+    
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<html ng-app="a">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>header</title>
+    <link href="css/ionic.min.css" rel="stylesheet">
+    <script src="js/ionic.bundle.min.js"></script>
+    <script>
+   	angular.module("a",['ionic'])
+   	       .controller("b",function($scope){});
+   </script>
+   <style>
+   	 b{
+   	   text-shadow:-.5rem 0.4rem 0.1rem #CC6633; 
+        }
+
+   </style>
+</head>
+<body ng-controller="b"> 
+	<!--头部内容-->
+	<div class="list bar bar-header bar-positive">
+		<h1 class=" title" id="h1textinnhtml"></h1>
+		<div class="item-thumbnail-left">
+		        <img src="img/3.gif"/> 
+			</div>
+	</div>
+	<script>
+		var h1textinnhtml=document.getElementById("h1textinnhtml");
+	    h1textinnhtml.innerHTML="<b>我的</b>";
+	    var a=2;
+			function b(){
+			if(a<2){
+			a++;
+			h1textinnhtml.innerHTML="<b>我的</b>";
+			}else{
+				a=1;
+				h1textinnhtml.innerHTML="<b>个人简历</b>";
+			}
+			}
+			setInterval("b()",3000);
+		
+
+		
+		
+		
+		
+	</script>
+    </body>
+</html>

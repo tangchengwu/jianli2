@@ -1,0 +1,95 @@
+<html ng-app="a">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>basicInformation</title>
+    <link href="css/ionic.min.css" rel="stylesheet">
+    <script src="js/ionic.bundle.min.js"></script>
+      <script>
+   	angular.module("a",['ionic'])
+   	       .controller("b",function($scope){});
+   </script>   
+   <style>
+   	p{
+   		line-height: 2.5rem;
+   		
+   	}
+   	.content_center{
+   			    max-height: 100%;
+				overflow: auto;
+   	}
+   	section{
+   		line-height: 1.6rem;
+   	}
+   	
+   	
+   </style>
+</head>
+<body ng-controller="b"> 
+	<!--中间内容-->
+<div class="content has-header content_center" >	
+<ion-list  >
+    </ion-item>
+    <ion-item class="item-avatar-right">
+        <img src="img/1.jpg"/>
+        <p>h5前端工程师</p>
+   </ion-item>
+    <ion-item class="item">
+    	姓名：唐成武
+    </ion-item>
+    <ion-item class="item">
+    	性别：男
+    </ion-item>
+    <ion-item class="item">
+    	出生日期：1992.04
+    </ion-item>
+      <ion-item class="item">
+    	学历：本科
+    </ion-item>
+    <ion-item class="item">
+    身份证号：450422199204280513
+    </ion-item>  
+      <ion-item class="item">
+      	户籍：广西壮族自治区梧州市藤县濛江镇
+    </ion-item>
+      <ion-item class="item-divider">
+      	教育背景
+    </ion-item>
+      <ion-item class="item">
+      	2000年.9月至2006年.6月：大德小学就读
+    </ion-item>
+      <ion-item class="item">
+      	2006年.9月至2009年.6月：藤县第三中学就读
+    </ion-item>
+      <ion-item class="item">
+      	2009年.9月至2012年.6月：藤县中学就读   担任纪律委员
+    </ion-item>
+      <ion-item class="item">
+      	2012年.9月至2016年.6月：保定学院就读   担任学习委员
+    </ion-item>
+      <ion-item class="item-divider">
+      	自我介绍
+    </ion-item>
+       <ion-item class="item">
+       	<section>
+         1.	本人待人热情、真诚，做事认真，谦虚谨慎，诚实守信、勇于拼搏、吃苦耐劳；<br/>
+         2.	乐于学习，有较好的时间观念和责任心强；<br/>
+         3.	能迅速的适应各种环境，具有良好的团队意识，具有一定的专业知识，能够有效率地完成工作，希望能为贵公司贡献自己的才能。
+         </section>
+    </ion-item>
+      <ion-item class="item">
+                                个人爱好：热爱电脑，热爱IT事业
+    </ion-item>
+      <ion-item class="item">
+      	愿景：做一名出色的H5前端工程师
+    </ion-item>
+    <ion-item class="item">
+      	<a href="myjianli.html" class="button button-calm">我的求职简历</a>
+      	<a href="mybiyezhengshu.html" class="button button-calm">我的毕业证书</a>
+      	<a href="mydaxueDanzhang.html#itemImg" class="button button-calm">我的大学</a>
+    </ion-item>
+    
+</ion-list>
+</div>
+    </body>
+</html>
